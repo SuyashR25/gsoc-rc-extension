@@ -157,14 +157,13 @@ All screenshots below are from `docs/screenshots/` and use the exact filenames c
 │   ├── SCHEDULER.md           ← Scheduled task patterns
 │   └── REVIEW.md              ← Pre-deploy checklist
 ├── docs/
-│   └── gsoc/
-│       ├── screenshots/       ← Terminal + RocketChat evidence screenshots
-│       ├── snippets/          ← Focused code evidence snippets
-│       │   ├── app-class-registration.ts
-│       │   ├── slash-command-executor.ts
-│       │   ├── public-api-call.ts
-│       │   └── bot-loop-guard.ts
-│       └── README.md          ← Snippet index and generation context
+│   ├── screenshots/       ← Terminal + RocketChat evidence screenshots
+│   ├── snippets/          ← Focused code evidence snippets
+│   │   ├── app-class-registration.ts
+│   │   ├── slash-command-executor.ts
+│   │   ├── public-api-call.ts
+│   │   └── bot-loop-guard.ts
+│   └── README.md          ← Snippet index and generation context
 └── .gitignore                 ← Submission-safe ignore rules
 ```
 
