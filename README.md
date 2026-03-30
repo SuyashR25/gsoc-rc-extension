@@ -206,18 +206,3 @@ Focused evidence snippets in [`docs/snippets/`](docs/snippets/):
 [`bot-loop-guard.ts`](docs/snippets/bot-loop-guard.ts) — **Proves:** The AI never generates message listeners without this guard. Without it, an app that sends a message in response to a message will trigger itself again — creating an infinite bot loop that floods the channel. This guard is added as part of the workflow, not as an afterthought.
 
 ---
-
-## Pre-Push Checklist (GSoC Submission)
-
-- [x] `plan_hitl.png`: Prompt and implementation plan
-- [x] `prompt_reading.png`: Skill docs loaded before coding
-- [x] `scaffholding.png`: App scaffolding flow
-- [x] `packages.png`: Install and TypeScript validation stage
-- [x] `validate.png`: Install/validate tool success
-- [x] `deploy.png`: Deployment command success logs
-- [x] `done.png`: Final deployment summary
-- [x] `mcp_1.png`: MCP docs query evidence
-- [x] `rc-bot.png`: Rocket.Chat runtime bot responses
-- [x] Snippet files present in `docs/snippets/`
-- [x] At least 1 complete app under `apps/`
-- [ ] No secrets, tokens, or `.env` credentials committed
