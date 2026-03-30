@@ -1,0 +1,17 @@
+{
+    "id": "287a84e1-442c-4960-9a32-d285c456d02d",
+    "version": "1.0.0",
+    "requiredApiVersion": "^1.44.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Gemini Agent",
+        "homepage": "https://example.com",
+        "support": "https://example.com"
+    },
+    "name": "math-solver-app",
+    "nameSlug": "math-solver-app",
+    "classFile": "MathSolverAppApp.ts",
+    "className": "MathSolverAppApp",
+    "description": "A math expression solver app using mathjs.org API",
+    "implements": []
+}

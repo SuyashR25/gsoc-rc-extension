@@ -1,0 +1,15 @@
+# Node artifacts
+node_modules/
+npm-debug.log*
+
+# Build output
+build/
+dist/
+
+# Environment and secrets
+.env
+.env.*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
