@@ -41,5 +41,5 @@ Users want to quickly evaluate expressions without leaving Rocket.Chat. This app
 
 ## Related Evidence
 
-- Runtime screenshot: [`rc-bot.png`](../docs/gsoc/screenshots/rc-bot.png)
-- Snippets index: [`docs/gsoc/snippets/README.md`](../docs/gsoc/snippets/README.md)
+- Runtime screenshot: [`rc-bot.png`](../docs/screenshots/rc-bot.png)
+- Snippets index: [`docs/snippets/README.md`](../docs/snippets/README.md)

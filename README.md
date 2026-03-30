@@ -73,61 +73,61 @@ class MathSlashCommand implements ISlashCommand {
 
 ## Screenshots (Current GSoC Evidence)
 
-All screenshots below are from `docs/gsoc/screenshots/` and use the exact filenames currently present in this submission.
+All screenshots below are from `docs/screenshots/` and use the exact filenames currently present in this submission.
 
 ### 1. Prompt + Implementation Plan
 **File:** `plan_hitl.png`  
 **Shows:** User prompt (`/rc-create ...`) followed by the generated implementation plan (app name, features, required skills, API, output file).
 
-![Prompt and implementation plan](docs/gsoc/screenshots/plan_hitl.png)
+![Prompt and implementation plan](docs/screenshots/plan_hitl.png)
 
 ### 2. Skill Docs Read Before Coding
 **File:** `prompt_reading.png`  
 **Shows:** The agent loading required skill docs (`SLASH_COMMANDS.md`, `MESSAGE_LISTENERS.md`, `REVIEW.md`) before implementation.
 
-![Skill files read before implementation](docs/gsoc/screenshots/prompt_reading.png)
+![Skill files read before implementation](docs/screenshots/prompt_reading.png)
 
 ### 3. App Scaffolding Stage
 **File:** `scaffholding.png`  
 **Shows:** `rc-apps create` scaffolding the app and reading generated metadata (`app.json`) to continue flow.
 
-![rc-apps create scaffold output](docs/gsoc/screenshots/scaffholding.png)
+![rc-apps create scaffold output](docs/screenshots/scaffholding.png)
 
 ### 4. Dependency Install + TypeScript Validation
 **File:** `packages.png`  
 **Shows:** Package installation and TypeScript validation flow (`npx tsc --noEmit`) during pre-deploy checks.
 
-![Dependencies and TypeScript checks](docs/gsoc/screenshots/packages.png)
+![Dependencies and TypeScript checks](docs/screenshots/packages.png)
 
 ### 5. Install/Validate + Pre-Deploy Updates
 **File:** `validate.png`  
 **Shows:** `install_and_validate_rc_app` success and follow-up deployment preparation updates.
 
-![Install and validate rc app](docs/gsoc/screenshots/validate.png)
+![Install and validate rc app](docs/screenshots/validate.png)
 
 ### 6. Deployment Command Success
 **File:** `deploy.png`  
 **Shows:** `deploy_rc_app` execution with successful packaging/upload stages and deployment logs.
 
-![Deploy command success output](docs/gsoc/screenshots/deploy.png)
+![Deploy command success output](docs/screenshots/deploy.png)
 
 ### 7. Final Deployment Summary
 **File:** `done.png`  
 **Shows:** Final generated summary confirming app creation/deployment and the available slash command.
 
-![Final deployment summary output](docs/gsoc/screenshots/done.png)
+![Final deployment summary output](docs/screenshots/done.png)
 
 ### 8. Skill Query via MCP Tooling
 **File:** `mcp_1.png`  
 **Shows:** `query_rc_docs` MCP usage to fetch `SLASH_COMMANDS.md` guidance used by the workflow.
 
-![MCP skill query output](docs/gsoc/screenshots/mcp_1.png)
+![MCP skill query output](docs/screenshots/mcp_1.png)
 
 ### 9. Rocket.Chat Runtime Proof (Math Solver Bot)
 **File:** `rc-bot.png`  
 **Shows:** Bot responses inside Rocket.Chat for math expressions, including examples like `4+5` and `12+(6*5)/12`.
 
-![Math solver bot responses in Rocket.Chat](docs/gsoc/screenshots/rc-bot.png)
+![Math solver bot responses in Rocket.Chat](docs/screenshots/rc-bot.png)
 
 ---
 
@@ -188,23 +188,23 @@ Each skill file is a standalone playbook. The AI reads only what is needed:
 
 ## Code Snippets
 
-Focused evidence snippets in [`docs/gsoc/snippets/`](docs/gsoc/snippets/):
+Focused evidence snippets in [`docs/snippets/`](docs/snippets/):
 
 ### 1. App Class Registration
-[`app-class-registration.ts`](docs/gsoc/snippets/app-class-registration.ts) — **Proves:** The App class is always the first exported class in the file. This is a hard requirement of the RC Apps Engine — if any other export appears before it, the deploy fails with "App must contain a getName function". The AI enforces this rule.
+[`app-class-registration.ts`](docs/snippets/app-class-registration.ts) — **Proves:** The App class is always the first exported class in the file. This is a hard requirement of the RC Apps Engine — if any other export appears before it, the deploy fails with "App must contain a getName function". The AI enforces this rule.
 
 ### 2. Slash Command Executor (Full Pattern)
-[`slash-command-executor.ts`](docs/gsoc/snippets/slash-command-executor.ts) — **Proves:** Complete slash command implementation generated in one pass by the AI. Demonstrates:
+[`slash-command-executor.ts`](docs/snippets/slash-command-executor.ts) — **Proves:** Complete slash command implementation generated in one pass by the AI. Demonstrates:
 - Argument validation before async work
 - Try/catch around all HTTP calls (mandatory rule)
 - HTTP status code check before reading data
 - `sendMessage` (public) vs `notifyMessage` (private) pattern
 
 ### 3. Public API Call Pattern
-[`public-api-call.ts`](docs/gsoc/snippets/public-api-call.ts) — **Proves:** The AI prefers free, key-less public APIs over paid alternatives. For the math solver, it uses the Math.js public API without credentials, while still supporting the same error-handling pattern for other free APIs.
+[`public-api-call.ts`](docs/snippets/public-api-call.ts) — **Proves:** The AI prefers free, key-less public APIs over paid alternatives. For the math solver, it uses the Math.js public API without credentials, while still supporting the same error-handling pattern for other free APIs.
 
 ### 4. Bot Loop Guard (Infinite Loop Prevention)
-[`bot-loop-guard.ts`](docs/gsoc/snippets/bot-loop-guard.ts) — **Proves:** The AI never generates message listeners without this guard. Without it, an app that sends a message in response to a message will trigger itself again — creating an infinite bot loop that floods the channel. This guard is added as part of the workflow, not as an afterthought.
+[`bot-loop-guard.ts`](docs/snippets/bot-loop-guard.ts) — **Proves:** The AI never generates message listeners without this guard. Without it, an app that sends a message in response to a message will trigger itself again — creating an infinite bot loop that floods the channel. This guard is added as part of the workflow, not as an afterthought.
 
 ---
 
@@ -219,6 +219,6 @@ Focused evidence snippets in [`docs/gsoc/snippets/`](docs/gsoc/snippets/):
 - [x] `done.png`: Final deployment summary
 - [x] `mcp_1.png`: MCP docs query evidence
 - [x] `rc-bot.png`: Rocket.Chat runtime bot responses
-- [x] Snippet files present in `docs/gsoc/snippets/`
+- [x] Snippet files present in `docs/snippets/`
 - [x] At least 1 complete app under `apps/`
 - [ ] No secrets, tokens, or `.env` credentials committed
